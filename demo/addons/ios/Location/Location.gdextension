@@ -1,0 +1,16 @@
+[configuration]
+entry_symbol = "swift_entry_point"
+compatibility_minimum = 4.2
+reloadable = true
+
+[libraries]
+ios.debug = "res://addons/ios/Location/bin/ios/debug/Location.framework"
+ios.release = "res://addons/ios/Location/bin/ios/release/Location.framework"
+macos.debug = "res://addons/ios/Location/bin/macos/debug/libLocation.dylib"
+macos.release = "res://addons/ios/Location/bin/macos/release/libLocation.dylib"
+
+[dependencies]
+ios.debug = { "res://addons/ios/Location/bin/ios/debug/SwiftGodot.framework": "" }
+ios.release = { "res://addons/ios/Location/bin/ios/release/SwiftGodot.framework": "" }
+macos.debug = { "res://addons/ios/Location/bin/macos/debug/libSwiftGodot.dylib": "" }
+macos.release = { "res://addons/ios/Location/bin/macos/release/libSwiftGodot.dylib": "" }

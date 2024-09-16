@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg3hylang5fxn"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_j0gfq"]
+[ext_resource type="Script" path="res://ios_location_plugin.gd" id="2_nc3l5"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("log_label", "geolocation_status_label", "ios_plugin", "ask_for_always_permission_check_button")]
+script = ExtResource("1_j0gfq")
+log_label = NodePath("LogLabel")
+geolocation_status_label = NodePath("GeolocationStatusLabel")
+ios_plugin = NodePath("LocationPlugin")
+ask_for_always_permission_check_button = NodePath("AskForAlwaysPermissionCheckButton")
+
+[node name="PingButton" type="Button" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 382.0
+offset_top = 237.0
+offset_right = 662.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ping"
+
+[node name="StartListeningButton" type="Button" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 756.0
+offset_top = 366.0
+offset_right = 1036.0
+offset_bottom = 428.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Listening"
+
+[node name="StopListeningButton" type="Button" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = 363.0
+offset_right = 319.0
+offset_bottom = 425.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Stop Listening"
+
+[node name="HasPermissionButton" type="Button" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 388.0
+offset_top = 364.0
+offset_right = 668.0
+offset_bottom = 426.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Has Permission?"
+
+[node name="LogLabel" type="Label" parent="."]
+offset_left = 395.0
+offset_top = 79.0
+offset_right = 828.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 30
+text = "Hello"
+
+[node name="GeolocationStatusLabel" type="Label" parent="."]
+offset_left = 339.0
+offset_top = 473.0
+offset_right = 772.0
+offset_bottom = 585.0
+theme_override_font_sizes/font_size = 30
+text = "Hello"
+
+[node name="LocationPlugin" type="Node" parent="."]
+script = ExtResource("2_nc3l5")
+
+[node name="AskForAlwaysPermissionCheckButton" type="CheckButton" parent="."]
+offset_left = 1005.0
+offset_top = 252.0
+offset_right = 1060.0
+offset_bottom = 288.0
+
+[node name="Label" type="Label" parent="AskForAlwaysPermissionCheckButton"]
+layout_mode = 0
+offset_left = -262.0
+offset_top = 6.0
+offset_right = -16.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 18
+text = "Ask For \"Always\" Permission"
+
+[connection signal="pressed" from="PingButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="StartListeningButton" to="." method="_on_start_listening_button_pressed"]
+[connection signal="pressed" from="StopListeningButton" to="." method="_on_stop_listening_button_pressed"]
+[connection signal="pressed" from="HasPermissionButton" to="." method="_on_has_permission_button_pressed"]
