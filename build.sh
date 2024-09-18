@@ -33,7 +33,7 @@ if [[ ! $PROJECT ]]; then
 	echo 
 	echo "-f force copy SwiftGodot library even if it exists"
 	echo "	Useful if you have updated the SwiftGodot version"
-	echo "<project> is the project folder to build. eg GameCenter"
+	echo "<project> is the project folder to build. eg Location"
 	echo "<platform> is the platform to build for"
 	echo "	Options: ios, macos & all. (Default: all)"
 	echo "<config> is the configuration to use"

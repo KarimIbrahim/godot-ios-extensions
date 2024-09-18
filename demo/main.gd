@@ -6,7 +6,7 @@ extends Node2D
 
 @export var log_label: Label
 @export var geolocation_status_label: Label
-@export var ios_plugin: LocationPlugin
+@export var ios_plugin: iOSLocationPlugin
 @export var ask_for_always_permission_check_button: CheckButton
 
 

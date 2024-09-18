@@ -14,7 +14,7 @@ extends Node
 #
 # The wrapper exposes the following signal:
 # ios_location_updated: Emitted periodically with the updated geolocation.
-class_name LocationPlugin
+class_name iOSLocationPlugin
 
 var plugin: Location = Location.new()
 var _is_supported_platform: bool = false

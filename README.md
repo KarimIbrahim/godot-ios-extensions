@@ -6,7 +6,7 @@ The plugin is using the [`SwiftGodot`](https://github.com/migueldeicaza/SwiftGod
 
 ## Contents
 * The Swift project for the iOS/macOS plugin: [`Location`](Location)
-* * A wrapper/helper class to work with the plugin in GDScript: [`demo/ios_location_plugin.gd`](demo/ios_location_plugin.gd)
+* A wrapper/helper class to work with the plugin in GDScript: [`demo/ios_location_plugin.gd`](demo/ios_location_plugin.gd)
 * A demo project to test the plugin: [`demo`](demo)
 
 ## Release
@@ -43,7 +43,7 @@ You can find the latest binaries in the [`releases page`](https://github.com/Kar
 
 ### Building the plugin
 - You don't technically need to build the plugin, unless you need to modify the Swift project. The pre-built binaries are included in the [`releases page`](https://github.com/KarimIbrahim/godot-ios-extensions/releases)
-- In a terminal window, navigate to the project's root directory ([`godot-ios-extensions`](godot-ios-extensions)) and run the following command:
+- In a terminal window, navigate to the project's root directory ([`godot-ios-extensions`](/)) and run the following command:
 ```
 $ chmod a+x build.sh
 $ ./build.sh Location all debug
@@ -56,7 +56,7 @@ Syntax: build [-f] <project> <platform?> <config?>
 
 -f force copy SwiftGodot library even if it exists
         Useful if you have updated the SwiftGodot version
-<project> is the project folder to build. eg GameCenter
+<project> is the project folder to build. eg Location
 <platform> is the platform to build for
         Options: ios, macos & all. (Default: all)
 <config> is the configuration to use
