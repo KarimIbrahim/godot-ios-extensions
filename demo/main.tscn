@@ -3,35 +3,50 @@
 [ext_resource type="Script" path="res://main.gd" id="1_j0gfq"]
 [ext_resource type="Script" path="res://ios_location_plugin.gd" id="2_nc3l5"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("log_label", "geolocation_status_label", "ios_plugin", "ask_for_always_permission_check_button")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("log_label", "geolocation_status_label", "ios_plugin", "ask_for_always_permission_check_button", "battery_level_label", "battery_state_label")]
 script = ExtResource("1_j0gfq")
 log_label = NodePath("LogLabel")
 geolocation_status_label = NodePath("GeolocationStatusLabel")
 ios_plugin = NodePath("LocationPlugin")
 ask_for_always_permission_check_button = NodePath("AskForAlwaysPermissionCheckButton")
+battery_level_label = NodePath("BatteryLevelLabel")
+battery_state_label = NodePath("BatteryStateLabel")
 
 [node name="PingButton" type="Button" parent="."]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 382.0
-offset_top = 237.0
-offset_right = 662.0
-offset_bottom = 299.0
+offset_left = 44.0
+offset_top = 167.0
+offset_right = 324.0
+offset_bottom = 229.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Ping"
+text = "Ping Location"
+
+[node name="PingBattery" type="Button" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 626.0
+offset_top = 169.0
+offset_right = 906.0
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ping Battery"
 
 [node name="StartListeningButton" type="Button" parent="."]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 756.0
-offset_top = 366.0
-offset_right = 1036.0
-offset_bottom = 428.0
+offset_left = 48.0
+offset_top = 328.0
+offset_right = 328.0
+offset_bottom = 390.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Start Listening"
@@ -41,10 +56,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 39.0
-offset_top = 363.0
-offset_right = 319.0
-offset_bottom = 425.0
+offset_left = 47.0
+offset_top = 409.0
+offset_right = 327.0
+offset_bottom = 471.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Stop Listening"
@@ -54,38 +69,58 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 388.0
-offset_top = 364.0
-offset_right = 668.0
-offset_bottom = 426.0
+offset_left = 46.0
+offset_top = 246.0
+offset_right = 326.0
+offset_bottom = 308.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Has Permission?"
 
 [node name="LogLabel" type="Label" parent="."]
-offset_left = 395.0
-offset_top = 79.0
-offset_right = 828.0
-offset_bottom = 191.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 52.0
+offset_top = 10.0
+offset_right = 1093.0
+offset_bottom = 108.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 30
 text = "Hello"
 
 [node name="GeolocationStatusLabel" type="Label" parent="."]
-offset_left = 339.0
-offset_top = 473.0
-offset_right = 772.0
-offset_bottom = 585.0
+offset_left = 51.0
+offset_top = 491.0
+offset_right = 484.0
+offset_bottom = 603.0
 theme_override_font_sizes/font_size = 30
 text = "Hello"
+
+[node name="BatteryStateLabel" type="Label" parent="."]
+offset_left = 629.0
+offset_top = 333.0
+offset_right = 988.0
+offset_bottom = 389.0
+theme_override_font_sizes/font_size = 30
+text = "Battery State: Unknown"
+
+[node name="BatteryLevelLabel" type="Label" parent="."]
+offset_left = 629.0
+offset_top = 261.0
+offset_right = 990.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 30
+text = "Battery Level : -1"
 
 [node name="LocationPlugin" type="Node" parent="."]
 script = ExtResource("2_nc3l5")
 
 [node name="AskForAlwaysPermissionCheckButton" type="CheckButton" parent="."]
-offset_left = 1005.0
-offset_top = 252.0
-offset_right = 1060.0
-offset_bottom = 288.0
+offset_left = 303.0
+offset_top = 110.0
+offset_right = 358.0
+offset_bottom = 146.0
 
 [node name="Label" type="Label" parent="AskForAlwaysPermissionCheckButton"]
 layout_mode = 0
@@ -97,6 +132,7 @@ theme_override_font_sizes/font_size = 18
 text = "Ask For \"Always\" Permission"
 
 [connection signal="pressed" from="PingButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="PingBattery" to="." method="_on_ping_battery_pressed"]
 [connection signal="pressed" from="StartListeningButton" to="." method="_on_start_listening_button_pressed"]
 [connection signal="pressed" from="StopListeningButton" to="." method="_on_stop_listening_button_pressed"]
 [connection signal="pressed" from="HasPermissionButton" to="." method="_on_has_permission_button_pressed"]

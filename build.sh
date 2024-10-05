@@ -90,7 +90,7 @@ build_ios() {
 	fi
 
 	product_path="$build_path/Build/Products/$2-iphoneos/PackageFrameworks"
-	binary_path="bin/ios/$CONFIG"
+	binary_path="bin/$PROJECT/ios/$CONFIG"
 
 	COPY_COMMANDS+=("cp -af ""$product_path/$1.framework ""$binary_path")
 	if [[ ! -e "$binary_path/SwiftGodot.framework" || $FORCE_COPY_LIB == true ]]; then
@@ -137,7 +137,7 @@ build_macos_xcode() {
 	fi
 
 	product_path="$build_path/Build/Products/$2/PackageFrameworks"
-	binary_path="bin/macos/$CONFIG"
+	binary_path="bin/$PROJECT/macos/$CONFIG"
 
 	COPY_COMMANDS+=("cp -af $product_path/$1.framework $binary_path")
 	if [[ ! -e "$binary_path/SwiftGodot.framework" || $FORCE_COPY_LIB == true ]]; then
@@ -177,7 +177,7 @@ build_macos() {
 	echo "${BOLD}${GREEN}Build Succeeded${RESET_FORMATTING}"
 
 	product_path="$build_path/$TRIPLE_MACOS/$2"
-	binary_path="bin/macos/$CONFIG"
+	binary_path="bin/$PROJECT/macos/$CONFIG"
 
 	COPY_COMMANDS+=("cp -af $product_path/lib$1.dylib $binary_path")
 	if [[ ! -e "$binary_path/libSwiftGodot.dylib" || $FORCE_COPY_LIB == true ]]; then
@@ -212,9 +212,9 @@ build_libs() {
 		done
 	fi
 
-	rm -rf demo/addons/ios/Location/bin
-	mkdir -p demo/addons/ios/Location
-	cp -R bin demo/addons/ios/Location/
+	rm -rf demo/addons/ios/$PROJECT/bin
+	mkdir -p demo/addons/ios/$PROJECT/bin
+	cp -R bin/$PROJECT/ demo/addons/ios/$PROJECT/bin/
 
 	echo "${BOLD}${GREEN}Finished building $1 $3 libraries for $2 platforms${RESET_FORMATTING}"
 }

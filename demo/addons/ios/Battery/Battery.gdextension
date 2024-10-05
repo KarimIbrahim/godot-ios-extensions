@@ -4,10 +4,10 @@ compatibility_minimum = 4.2
 reloadable = true
 
 [libraries]
-ios.debug = "res://addons/ios/Location/bin/ios/debug/Location.framework"
-ios.release = "res://addons/ios/Location/bin/ios/release/Location.framework"
-macos.debug = "res://addons/ios/Location/bin/macos/debug/libLocation.dylib"
-macos.release = "res://addons/ios/Location/bin/macos/release/libLocation.dylib"
+ios.debug = "res://addons/ios/Battery/bin/ios/debug/Battery.framework"
+ios.release = "res://addons/ios/Battery/bin/ios/release/Battery.framework"
+macos.debug = "res://addons/ios/Battery/bin/macos/debug/libBattery.dylib"
+macos.release = "res://addons/ios/Battery/bin/macos/release/libBattery.dylib"
 
 [dependencies]
 ios.debug = { "res://addons/ios/Battery/bin/ios/debug/SwiftGodot.framework": "" }
