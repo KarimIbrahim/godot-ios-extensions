@@ -36,7 +36,7 @@ An iOS/macOS plugin for Godot to retrieve the battery status. The plugin is usin
 
 ### Building the plugin
 - You don't technically need to build the plugin, unless you need to modify the Swift project. The pre-built binaries are included in the [`releases page`](https://github.com/KarimIbrahim/godot-ios-extensions/releases)
-- In a terminal window, navigate to the project's root directory ([`godot-ios-extensions`](/)) and run the following command:
+- In a terminal window, navigate to the project's root directory ([`godot-ios-extensions`](../)) and run the following command:
 ```
 $ chmod a+x build.sh
 $ ./build.sh Battery all debug
@@ -56,12 +56,12 @@ Syntax: build [-f] <project> <platform?> <config?>
         Options: debug & release. (Default: release)
 
 ```
-- On successful completion of the build, the output files can be found in [`demo/addons/ios/Battery/bin`](demo/addons/ios/Battery/bin)
+- On successful completion of the build, the output files can be found in [`demo/addons/ios/Battery/bin`](../demo/addons/ios/Battery/bin)
 
 ### Testing the plugin
-You can use the included [demo](demo/project.godot) to test the built iOS plugin
+You can use the included [demo](../demo/project.godot) to test the built iOS plugin
 
 - Open the demo in Godot (4.2 or higher)
 - Install the Godot iOS build template by clicking on `Project` -> `Install iOS Build Template...`
-- Open [`demo/main.gd`](demo/main.gd) and update the logic as needed 
+- Open [`demo/main.gd`](../demo/main.gd) and update the logic as needed 
 - Connect an iOS device to your machine and run the demo on it
